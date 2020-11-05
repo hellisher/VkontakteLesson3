@@ -113,7 +113,7 @@ class NewsTableViewCellOld: UITableViewCell {
     private func generateBlureImage(_ image: UIImage) {
         DispatchQueue.global(qos: .userInteractive).async {
             let inputCIImage = CIImage(image: image)!
-            let blurFilter = CIFilter(name: "CIGaussianBlur", withInputParameters: [kCIInputImageKey: inputCIImage])!
+            let blurFilter = CIFilter(name: "CIGaussianBlur", parameters: [kCIInputImageKey: inputCIImage])!
             let outputImage = blurFilter.outputImage!
             let context = CIContext()
             

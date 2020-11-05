@@ -45,7 +45,7 @@ class CustomSearchBar: UIView {
         imageView.tintColor = UIColor.white
         
         textField.textColor = UIColor.white
-        textField.attributedPlaceholder = NSAttributedString(string: "Поиск...", attributes: [NSAttributedStringKey.foregroundColor: UIColor.groupTableViewBackground])
+        textField.attributedPlaceholder = NSAttributedString(string: "Поиск...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.groupTableViewBackground])
         
         self.addSubview(textField)
         self.addSubview(buttonCancel)
@@ -54,7 +54,7 @@ class CustomSearchBar: UIView {
         buttonCancel.addTarget(self, action:#selector(self.buttonClicked), for: .touchUpInside)
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     

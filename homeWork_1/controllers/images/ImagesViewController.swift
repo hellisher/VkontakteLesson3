@@ -167,12 +167,12 @@ extension ImagesViewController {
     
     // Свайпами
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-        if gesture.direction == UISwipeGestureRecognizerDirection.down {
+        if gesture.direction == UISwipeGestureRecognizer.Direction.down {
             self.navigationController?.popViewController(animated: true)
         } else if (!isZoomed) {
             var needAnimate = false
             
-            if gesture.direction == UISwipeGestureRecognizerDirection.right {
+            if gesture.direction == UISwipeGestureRecognizer.Direction.right {
                 if (selectedImage - 1 >= 0) {
                     previousImage = selectedImage
                     selectedImage -= 1
@@ -180,7 +180,7 @@ extension ImagesViewController {
                 }
             }
                 
-            else if gesture.direction == UISwipeGestureRecognizerDirection.left {
+            else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
                 if (selectedImage + 1 < photos.count) {
                     previousImage = selectedImage
                     selectedImage += 1

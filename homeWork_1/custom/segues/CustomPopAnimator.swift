@@ -19,7 +19,7 @@ final class CustomPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         guard let destination = transitionContext.viewController(forKey: .to) else { return }
         
         transitionContext.containerView.addSubview(destination.view)
-        transitionContext.containerView.sendSubview(toBack: destination.view)
+        transitionContext.containerView.sendSubviewToBack(destination.view)
         
         let sourceFrame = source.view.frame
         
@@ -40,7 +40,7 @@ final class CustomPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }) { finished in
             
             if finished && !transitionContext.transitionWasCancelled {
-                source.removeFromParentViewController()
+                source.removeFromParent()
             } else if transitionContext.transitionWasCancelled {
                 destination.view.transform = .identity
             }

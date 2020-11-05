@@ -55,13 +55,13 @@ class MainGroupViewController: UIViewController {
         let fontSelect = UIFont(name: "HelveticaNeue-Medium", size: 17) ?? UIFont()
     
         segmentedControl.setTitleTextAttributes([
-            NSAttributedStringKey.font: fontNormal,
-            NSAttributedStringKey.foregroundColor: UIColor.lightGray
+            NSAttributedString.Key.font: fontNormal,
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray
             ], for: .normal)
         
         segmentedControl.setTitleTextAttributes([
-            NSAttributedStringKey.font: fontSelect,
-            NSAttributedStringKey.foregroundColor: UIColor.white
+            NSAttributedString.Key.font: fontSelect,
+            NSAttributedString.Key.foregroundColor: UIColor.white
             ], for: .selected)
         
     }

@@ -74,7 +74,7 @@ import UIKit
     
     
     @objc private func selectTitle(_ sender: UIButton) {
-        guard let index = self.buttons.index(of: sender) else { return }
+        guard let index = self.buttons.firstIndex(of: sender) else { return }
         self.selectedTitle = GlobalConstants.titles[index]
         if let delegate = delegate {
             if let title = selectedTitle {

@@ -42,7 +42,7 @@ class CustomSquareIndicator: UIActivityIndicatorView {
         path.close()
         path.stroke()
         myLayer.path = path.cgPath
-        myLayer.lineCap = "round"
+        myLayer.lineCap = convertToCAShapeLayerLineCap("round")
         
         let strokeStartAnimation = CABasicAnimation(keyPath: "strokeStart")
         strokeStartAnimation.fromValue = 0
@@ -104,4 +104,9 @@ class CustomSquareIndicator: UIActivityIndicatorView {
         return cloudPath
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCAShapeLayerLineCap(_ input: String) -> CAShapeLayerLineCap {
+	return CAShapeLayerLineCap(rawValue: input)
 }
